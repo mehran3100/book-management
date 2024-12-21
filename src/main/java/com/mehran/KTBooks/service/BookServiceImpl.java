@@ -32,6 +32,11 @@ public class BookServiceImpl implements BookService {
 
     @Override
     public List<Book> findBooksByAuthor(String author) {
+        List<Book> books = bookRepository.findByAuthor(author);
+        if (books.isEmpty()) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Author not found");
+        }
+
         return bookRepository.findByAuthor(author);
     }
 
