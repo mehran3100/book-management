@@ -1,5 +1,6 @@
 package com.mehran.KTBooks.service;
 
+import com.mehran.KTBooks.entity.Author;
 import com.mehran.KTBooks.entity.Book;
 import com.mehran.KTBooks.repository.BookRepository;
 import jakarta.persistence.EntityNotFoundException;
@@ -31,7 +32,7 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
-    public List<Book> findBooksByAuthor(String author) {
+    public List<Book> findBooksByAuthor(Author author) {
         List<Book> books = bookRepository.findByAuthor(author);
         if (books.isEmpty()) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Author not found");

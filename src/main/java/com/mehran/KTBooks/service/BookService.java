@@ -1,5 +1,6 @@
 package com.mehran.KTBooks.service;
 
+import com.mehran.KTBooks.entity.Author;
 import com.mehran.KTBooks.entity.Book;
 
 import java.util.List;
@@ -13,7 +14,7 @@ public interface BookService {
 
     List<Book> fetchBookList();
 
-    List<Book> findBooksByAuthor(String author);
+    List<Book> findBooksByAuthor(Author author);
 
     Book updateBook(Book Book, Long BookId);
 

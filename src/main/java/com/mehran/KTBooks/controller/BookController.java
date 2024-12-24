@@ -1,5 +1,6 @@
 package com.mehran.KTBooks.controller;
 
+import com.mehran.KTBooks.entity.Author;
 import com.mehran.KTBooks.entity.Book;
 import com.mehran.KTBooks.service.BookService;
 import org.springframework.http.ResponseEntity;
@@ -29,7 +30,7 @@ public class BookController {
     }
 
     @GetMapping("/author/{author}")
-    public List<Book> getBooksByAuthor(@PathVariable String author) {
+    public List<Book> getBooksByAuthor(@PathVariable Author author) {
         return bookService.findBooksByAuthor(author);
     }
 

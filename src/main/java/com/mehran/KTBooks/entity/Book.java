@@ -15,8 +15,9 @@ public class Book {
     @Column(nullable = false)
     private String title; // Title of the book
 
-    @Column(nullable = false)
-    private String author; // Author's name
+    @ManyToOne
+    @JoinColumn(name = "author_id", nullable = false)
+    private Author author; // Author of the book
 
     @Column(nullable = false, unique = true)
     private String isbn; // ISBN number (unique identifier for books)
@@ -40,8 +41,27 @@ public class Book {
 
     @ManyToOne
     @JoinColumn(name = "genre_id")
-    private Genre genre; //
+    private Genre genre;
 
+    public Book(Long id, String title, Author author, String isbn, String publisher, LocalDate publicationDate, int pages, Double price, String language, String description, Category category, Genre genre) {
+        this.id = id;
+        this.title = title;
+        this.author = author;
+        this.isbn = isbn;
+        this.publisher = publisher;
+        this.publicationDate = publicationDate;
+        this.pages = pages;
+        this.price = price;
+        this.language = language;
+        this.description = description;
+        this.category = category;
+        this.genre = genre;
+    }
+
+    public Book() {
+    }
+
+    // Getters and Setters
     public Long getId() {
         return id;
     }
@@ -58,11 +78,11 @@ public class Book {
         this.title = title;
     }
 
-    public String getAuthor() {
+    public Author getAuthor() {
         return author;
     }
 
-    public void setAuthor(String author) {
+    public void setAuthor(Author author) {
         this.author = author;
     }
 
@@ -138,30 +158,12 @@ public class Book {
         this.genre = genre;
     }
 
-    public Book(Long id, String title, String author, String isbn, String publisher, LocalDate publicationDate, int pages, Double price, String language, String description, Category category, Genre genre) {
-        this.id = id;
-        this.title = title;
-        this.author = author;
-        this.isbn = isbn;
-        this.publisher = publisher;
-        this.publicationDate = publicationDate;
-        this.pages = pages;
-        this.price = price;
-        this.language = language;
-        this.description = description;
-        this.category = category;
-        this.genre = genre;
-    }
-
-    public Book() {
-    }
-
     @Override
     public String toString() {
         return "Book{" +
                 "id=" + id +
                 ", title='" + title + '\'' +
-                ", author='" + author + '\'' +
+                ", author=" + author +
                 ", isbn='" + isbn + '\'' +
                 ", publisher='" + publisher + '\'' +
                 ", publicationDate=" + publicationDate +
@@ -172,19 +174,6 @@ public class Book {
                 ", category=" + category +
                 ", genre=" + genre +
                 '}';
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Book book = (Book) o;
-        return pages == book.pages && Objects.equals(id, book.id) && Objects.equals(title, book.title) && Objects.equals(author, book.author) && Objects.equals(isbn, book.isbn) && Objects.equals(publisher, book.publisher) && Objects.equals(publicationDate, book.publicationDate) && Objects.equals(price, book.price) && Objects.equals(language, book.language) && Objects.equals(description, book.description) && Objects.equals(category, book.category) && Objects.equals(genre, book.genre);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, title, author, isbn, publisher, publicationDate, pages, price, language, description, category, genre);
     }
 
 }
