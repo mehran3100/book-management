@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/books")
+@RequestMapping("/api/book")
 public class BookController {
 
     private final BookService bookService;
@@ -45,6 +45,5 @@ public class BookController {
         bookService.deleteBookById(bookId);
         return ResponseEntity.noContent().build();
     }
-
 
 }

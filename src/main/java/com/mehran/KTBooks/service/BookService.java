@@ -8,7 +8,7 @@ import java.util.List;
 public interface BookService {
 
 
-    Book saveBook(Book Book);
+    void saveBook(Book Book);
 
     Book findById(Long BookId);
 

@@ -18,7 +18,7 @@ public class Book {
     @Column(nullable = false)
     private String title; // Title of the book
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "author_id", nullable = false)
     private Author author; // Author of the book
 
@@ -38,11 +38,11 @@ public class Book {
     @Column(length = 2000)
     private String description; // Brief description or summary of the book
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "category_id")
     private Category category;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "genre_id")
     private Genre genre;
 
