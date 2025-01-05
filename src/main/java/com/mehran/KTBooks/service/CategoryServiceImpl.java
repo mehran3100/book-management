@@ -1,9 +1,8 @@
 package com.mehran.KTBooks.service;
 
-import com.mehran.KTBooks.entity.Category;
+import com.mehran.KTBooks.models.entity.Category;
 import com.mehran.KTBooks.repository.CategoryRepository;
 import jakarta.persistence.EntityNotFoundException;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
@@ -13,8 +12,12 @@ import java.util.List;
 @Service
 public class CategoryServiceImpl implements CategoryService {
 
-    @Autowired
+    final
     CategoryRepository categoryRepository;
+
+    public CategoryServiceImpl(CategoryRepository categoryRepository) {
+        this.categoryRepository = categoryRepository;
+    }
 
     @Override
     public void savecategory(Category category) {

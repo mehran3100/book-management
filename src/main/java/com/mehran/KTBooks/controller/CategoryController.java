@@ -1,6 +1,6 @@
 package com.mehran.KTBooks.controller;
 
-import com.mehran.KTBooks.entity.Category;
+import com.mehran.KTBooks.models.entity.Category;
 import com.mehran.KTBooks.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

@@ -1,4 +1,4 @@
-package com.mehran.KTBooks.entity;
+package com.mehran.KTBooks.models.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;

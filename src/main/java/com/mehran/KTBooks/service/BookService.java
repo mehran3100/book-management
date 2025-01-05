@@ -1,7 +1,7 @@
 package com.mehran.KTBooks.service;
 
-import com.mehran.KTBooks.entity.Author;
-import com.mehran.KTBooks.entity.Book;
+import com.mehran.KTBooks.models.entity.Author;
+import com.mehran.KTBooks.models.entity.Book;
 
 import java.util.List;
 

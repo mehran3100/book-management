@@ -1,4 +1,4 @@
-package com.mehran.KTBooks.entity;
+package com.mehran.KTBooks.models.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -11,12 +11,12 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Genre {
+public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(nullable = false, unique = true)
-    private String name; // Example: "Fantasy", "Thriller"
+    private String name; // Example: "Fiction", "Non-Fiction"
 
 }

@@ -1,6 +1,7 @@
 package com.mehran.KTBooks.service;
 
-import com.mehran.KTBooks.entity.Category;
+
+import com.mehran.KTBooks.models.entity.Category;
 
 import java.util.List;
 

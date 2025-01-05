@@ -1,8 +1,7 @@
 package com.mehran.KTBooks.controller;
 
-import com.mehran.KTBooks.entity.Author;
+import com.mehran.KTBooks.models.entity.Author;
 import com.mehran.KTBooks.service.AuthorService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,8 +12,11 @@ import java.util.List;
 public class AuthorController {
 
     //todo: set all to services (for simplyfi the code)
-    @Autowired
-    private AuthorService service;
+    private final AuthorService service;
+
+    public AuthorController(AuthorService service) {
+        this.service = service;
+    }
 
     @GetMapping
     public List<Author> getAllBooks() {

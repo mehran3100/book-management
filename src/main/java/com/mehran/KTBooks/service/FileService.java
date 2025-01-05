@@ -1,18 +1,16 @@
 package com.mehran.KTBooks.service;
 
-import com.mehran.KTBooks.entity.UploadedFile;
+import com.mehran.KTBooks.models.entity.UploadedFile;
 import com.mehran.KTBooks.repository.FileRepository;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.LocalDateTime;
-import java.util.Optional;
 
 @Service
 public class FileService {
