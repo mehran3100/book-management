@@ -1,8 +1,8 @@
-package com.mehran.KTBooks.service;
+package com.mehran.KTBooks.services;
 
 import com.mehran.KTBooks.models.entity.Author;
 import com.mehran.KTBooks.models.entity.Book;
-import com.mehran.KTBooks.repository.BookRepository;
+import com.mehran.KTBooks.repositories.BookRepository;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;

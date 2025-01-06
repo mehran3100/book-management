@@ -1,7 +1,7 @@
-package com.mehran.KTBooks.service;
+package com.mehran.KTBooks.services;
 
 import com.mehran.KTBooks.models.entity.UploadedFile;
-import com.mehran.KTBooks.repository.FileRepository;
+import com.mehran.KTBooks.repositories.FileRepository;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;

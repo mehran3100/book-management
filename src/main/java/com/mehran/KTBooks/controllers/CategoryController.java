@@ -1,7 +1,7 @@
-package com.mehran.KTBooks.controller;
+package com.mehran.KTBooks.controllers;
 
 import com.mehran.KTBooks.models.entity.Category;
-import com.mehran.KTBooks.service.CategoryService;
+import com.mehran.KTBooks.services.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -17,25 +17,25 @@ public class CategoryController {
     private CategoryService service;
 
     @GetMapping
-    public List<Category> getAllBooks() {
+    public List<Category> getAllCategories() {
         return service.fetchcategoryList();
     }
 
     @PostMapping
-    public ResponseEntity<String> createBook(@RequestBody Category category) {
+    public ResponseEntity<String> createCategory(@RequestBody Category category) {
         service.savecategory(category);
         return ResponseEntity.ok("category added: " + category.getId());
     }
 
     /*@PutMapping("/category/{id}")
-    public ResponseEntity<Book> updateBook(@RequestBody Book bookDetails, @PathVariable Long id) {
-        Book updatedBook = service.updateBook(bookDetails, id);
-        return ResponseEntity.ok(updatedBook);
+    public ResponseEntity<Book> updateCategory(@RequestBody Category category, @PathVariable Long id) {
+        Category updatedCategory = service.updateBook(category, id);
+        return ResponseEntity.ok(updatedCategory);
     }*/
 
 //todo: set all to id (for simplyfi the code)
     @DeleteMapping("/category/{id}")
-    public ResponseEntity<Void> deleteBookById(@PathVariable("id") Long id) {
+    public ResponseEntity<Void> deleteCategoryById(@PathVariable("id") Long id) {
         service.deleteCategoryById(id);
         return ResponseEntity.noContent().build();
     }

@@ -1,5 +1,6 @@
 package com.mehran.KTBooks.models.entity;
 
+import com.mehran.KTBooks.models.enums.Genre;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -42,8 +43,8 @@ public class Book {
     @JoinColumn(name = "category_id")
     private Category category;
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "genre_id")
+    @Enumerated(EnumType.STRING) // Store the name of the enum in the database
+    @Column(nullable = false)
     private Genre genre;
 
 }

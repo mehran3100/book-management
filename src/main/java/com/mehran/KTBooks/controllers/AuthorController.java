@@ -1,7 +1,7 @@
-package com.mehran.KTBooks.controller;
+package com.mehran.KTBooks.controllers;
 
 import com.mehran.KTBooks.models.entity.Author;
-import com.mehran.KTBooks.service.AuthorService;
+import com.mehran.KTBooks.services.AuthorService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -19,12 +19,12 @@ public class AuthorController {
     }
 
     @GetMapping
-    public List<Author> getAllBooks() {
+    public List<Author> getAllAuthors() {
         return service.fetchAuthorList();
     }
 
     @PostMapping
-    public ResponseEntity<String> createBook(@RequestBody Author author) {
+    public ResponseEntity<String> createAuthor(@RequestBody Author author) {
         service.saveAuthor(author);
         return ResponseEntity.ok("Author added: " + author.getId());
     }
@@ -37,7 +37,7 @@ public class AuthorController {
 
 //todo: set all to id (for simplyfi the code)
     @DeleteMapping("/author/{id}")
-    public ResponseEntity<Void> deleteBookById(@PathVariable("id") Long id) {
+    public ResponseEntity<Void> deleteAuthorById(@PathVariable("id") Long id) {
         service.deleteAuthorById(id);
         return ResponseEntity.noContent().build();
     }

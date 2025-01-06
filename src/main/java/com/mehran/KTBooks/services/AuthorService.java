@@ -1,4 +1,4 @@
-package com.mehran.KTBooks.service;
+package com.mehran.KTBooks.services;
 
 import com.mehran.KTBooks.models.entity.Author;
 

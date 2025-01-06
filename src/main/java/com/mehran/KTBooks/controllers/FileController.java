@@ -1,7 +1,7 @@
-package com.mehran.KTBooks.controller;
+package com.mehran.KTBooks.controllers;
 
 import com.mehran.KTBooks.models.entity.UploadedFile;
-import com.mehran.KTBooks.service.FileService;
+import com.mehran.KTBooks.services.FileService;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;

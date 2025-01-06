@@ -1,8 +1,8 @@
-package com.mehran.KTBooks.service;
+package com.mehran.KTBooks.services;
 
 
 import com.mehran.KTBooks.models.entity.Author;
-import com.mehran.KTBooks.repository.AuthorRepository;
+import com.mehran.KTBooks.repositories.AuthorRepository;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
@@ -13,7 +13,8 @@ import java.util.List;
 @Service
 public class AuthorServiceImpl implements AuthorService {
 
-    final AuthorRepository AuthorRepository;
+    final
+    AuthorRepository AuthorRepository;
 
     public AuthorServiceImpl(AuthorRepository AuthorRepository) {
         this.AuthorRepository = AuthorRepository;

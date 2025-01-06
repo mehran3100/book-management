@@ -17,6 +17,6 @@ public class Category {
     private Long id;
 
     @Column(nullable = false, unique = true)
-    private String name; // Example: "Fiction", "Non-Fiction"
+    private String name; // Example: "audio", "Non-Fiction"
 
 }

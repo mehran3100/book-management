@@ -1,4 +1,4 @@
-package com.mehran.KTBooks.repository;
+package com.mehran.KTBooks.repositories;
 
 import com.mehran.KTBooks.models.entity.UploadedFile;
 import org.springframework.data.jpa.repository.JpaRepository;

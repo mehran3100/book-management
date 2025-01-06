@@ -1,4 +1,4 @@
-package com.mehran.KTBooks.controller;
+package com.mehran.KTBooks.controllers;
 
 import org.springframework.web.bind.annotation.GetMapping;
 

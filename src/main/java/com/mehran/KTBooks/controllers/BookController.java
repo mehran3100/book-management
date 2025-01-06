@@ -1,8 +1,8 @@
-package com.mehran.KTBooks.controller;
+package com.mehran.KTBooks.controllers;
 
 import com.mehran.KTBooks.models.entity.Author;
 import com.mehran.KTBooks.models.entity.Book;
-import com.mehran.KTBooks.service.BookService;
+import com.mehran.KTBooks.services.BookService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
